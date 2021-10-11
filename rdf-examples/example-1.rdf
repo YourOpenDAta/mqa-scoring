@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:dct="http://purl.org/dc/terms/"
+>
+  <dcat:Dataset rdf:about="http://955401ec-4384-4610-97ce-44d7c4324619/dataset/cf3dcff7-34ae-4fab-a202-2f17e3153b2f">
+    <dct:identifier>cf3dcff7-34ae-4fab-a202-2f17e3153b2f</dct:identifier>
+    <dcat:distribution>
+      <dcat:Distribution rdf:about="http://ad2ba73f-3ca7-4968-a35d-0feab97eaec9/dataset/cf3dcff7-34ae-4fab-a202-2f17e3153b2f/resource/9871734c-d261-4d66-96de-cfce6ddf8a31">
+        <dct:title>Example Resource</dct:title>
+        <dct:description>Example description of Example Resource</dct:description>
+        <dcat:accessURL rdf:resource="http://localhost/accessURL"/>
+        <dct:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/JSON"/>
+      </dcat:Distribution>
+    </dcat:distribution>
+  </dcat:Dataset>
+  <dct:MediaTypeOrExtent rdf:about="http://publications.europa.eu/resource/authority/file-type/JSON"/>
+</rdf:RDF>
+
