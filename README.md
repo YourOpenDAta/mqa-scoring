@@ -13,7 +13,9 @@ usage: mqa-scoring.py [-h] -f FILE
 Calculates the score obtained by a metadata according to the MQA methodology specified by data.europa.eu
 
 optional arguments:
+
   -h, --help            show this help message and exit
+  
   -f FILE, --file FILE  RDF file to be validated
 
 ## Requirements
