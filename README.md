@@ -7,6 +7,7 @@ Mqa-scoring is a tool that calculates the score a metadata obtains according to 
 ## Usage
 
 `python mqa-scoring.py -h`
+
 usage: mqa-scoring.py [-h] -f FILE
 
 Calculates the score obtained by a metadata according to the MQA methodology specified by data.europa.eu
