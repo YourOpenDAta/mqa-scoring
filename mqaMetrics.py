@@ -10,10 +10,13 @@ from rdflib import Graph
 def accessURL(urls, weight):
   checked = True
   for url in urls:
-    res = requests.head(url)
-    if res.status_code in range(200, 399):
-      checked = checked and True
-    else:
+    try:
+      res = requests.head(url)
+      if res.status_code in range(200, 399):
+        checked = checked and True
+      else:
+        checked = checked and False
+    except:
       checked = checked and False
   if checked:
     weight = weight + 50
@@ -27,10 +30,13 @@ def downloadURL(urls, weight):
   print('   Result: OK. The property is set. Weight assigned 20')
   weight = weight + 20
   for url in urls:
-    res = requests.head(url)
-    if res.status_code in range(200, 399):
-      checked = checked and True
-    else:
+    try:
+      res = requests.head(url)
+      if res.status_code in range(200, 399):
+        checked = checked and True
+      else:
+        checked = checked and False
+    except:
       checked = checked and False
   if checked:
     weight = weight + 30
