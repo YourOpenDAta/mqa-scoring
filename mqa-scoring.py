@@ -10,11 +10,12 @@ import json
 from rdflib import Graph
 import argparse
 import mqaMetrics as mqa
+import os
 
 URL_EDP = 'https://data.europa.eu/api/mqa/shacl/validation/report'
 HEADERS = {'content-type': 'application/rdf+xml'}
-MACH_READ_FILE = 'edp-vocabularies\edp-machine-readable-format.rdf'
-NON_PROP_FILE = 'edp-vocabularies\edp-non-proprietary-format.rdf'
+MACH_READ_FILE = os.path.join('edp-vocabularies', 'edp-machine-readable-format.rdf')
+NON_PROP_FILE = os.path.join('edp-vocabularies', 'edp-non-proprietary-format.rdf')
 
 def otherCases(pred, objs, g):
   for obj in objs:
