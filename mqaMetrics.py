@@ -1,11 +1,11 @@
 '''
 YODA (Your Open DAta)
-EU CEF Action nº 2019-ES-IA-0121
+EU CEF Action 2019-ES-IA-0121
 University of Cantabria
 Developer: Johnny Choque (jchoque@tlmat.unican.es)
 '''
 import requests
-from rdflib import Graph
+from rdflib import Graph, URIRef
 
 def accessURL(urls, weight):
   checked = True
@@ -147,21 +147,29 @@ def publisher(weight):
   return weight
 
 def accessrights(urls, weight):
+  uri = URIRef('')
   checked = True
+  isURL = True
   weight = weight + 10
   print('   Result: OK. The property is set. Weight assigned 10')
   for url in urls:
     g = Graph()
+    if type(url) != type(uri):
+      isURL = False
+      continue
     g.parse(url, format="application/rdf+xml")
     if (url, None, None) in g:
       checked = checked and True
     else:
       checked = checked and False
-  if checked:
-    weight = weight + 5
-    print('   Result: OK. The property uses a controlled vocabulary. Weight assigned 5')
+  if isURL:
+    if checked:
+      weight = weight + 5
+      print('   Result: OK. The property uses a controlled vocabulary. Weight assigned 5')
+    else:
+      print('   Result: ERROR. The license is incorrect -', str(url))
   else:
-    print('   Result: ERROR. The license is incorrect -', str(url))
+    print('   Result: ERROR. The property does not use a valid URL. No additional weight assigned')
   return weight
 
 def issued(weight):

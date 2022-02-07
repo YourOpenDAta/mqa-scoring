@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''
 YODA (Your Open DAta)
-EU CEF Action nº 2019-ES-IA-0121
+EU CEF Action 2019-ES-IA-0121
 University of Cantabria
 Developer: Johnny Choque (jchoque@tlmat.unican.es)
 '''
@@ -142,7 +142,7 @@ def main():
       weight = mqa.modified(weight)
     elif met == "dct:rights":
       weight = mqa.rights(weight)
-    elif met == "dct:byteSize":
+    elif met == "dcat:byteSize":
       weight = mqa.byteSize(weight)
     else:
       otherCases(pred, objs, g)
