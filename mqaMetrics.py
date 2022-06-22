@@ -11,7 +11,7 @@ def accessURL(urls, weight):
   checked = True
   for url in urls:
     try:
-      res = requests.head(url)
+      res = requests.get(url)
       if res.status_code in range(200, 399):
         checked = checked and True
       else:
@@ -31,7 +31,7 @@ def downloadURL(urls, weight):
   weight = weight + 20
   for url in urls:
     try:
-      res = requests.head(url)
+      res = requests.get(url)
       if res.status_code in range(200, 399):
         checked = checked and True
       else:
@@ -130,7 +130,7 @@ def mediatype(urls, weight):
   weight = weight + 10
   print('   Result: OK. The property is set. Weight assigned 10')
   for url in urls:
-    res = requests.head(str(url))
+    res = requests.get(str(url))
     if res.status_code != 404:
       checked = checked and True
     else:

@@ -49,7 +49,7 @@ def edp_validator(file, weight):
   with rdfFile:
     try:
       payload = rdfFile.read().replace("\n", " ")
-      r_edp = requests.post(URL_EDP, data=payload, headers=HEADERS)
+      r_edp = requests.post(URL_EDP, data=payload.encode('utf-8'), headers=HEADERS)
       r_edp.raise_for_status()
     except requests.exceptions.HTTPError as err:
       raise SystemExit(err)
